@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmers</title>
+</head>
+<body>
+{% if success %}
+    {{ success }}
+{% endif %}
+{% if programmers %}
+    <ul>
+    {% for person in programmers %}
+        <li><a href="{% url 'polls:detail' person.id %}">{{ person.user.first_name }}___{{person.user.last_name}}</a></li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'polls:add_user' %}">ADD USER</a>
+{% else %}
+    <p>No available.</p>
+{% endif %}
+
+</body>
+</html>
+

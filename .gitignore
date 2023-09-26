@@ -2,7 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+./venv/
+./venv
+venv
+.idea
+portfolio/db.sqlite3
 # C extensions
 *.so
 

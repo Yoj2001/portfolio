@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About programmer</title>
+    Name:{{programmer}}-->Surname:{{last_name}}-->age:{{age}}<br><br>
+    {% for project in des %}
+        -----------------------------<br>
+        PROJ NAME: {{ project.name }}<br>
+        PROJ DESC> {{ project.description }}<br>
+        -----------------------------<br>
+    {% endfor %}
+    <a href="{% url 'polls:add_project_page' prog_id %}">Add project</a>
+</head>
+<body>
+</body>
+</html>

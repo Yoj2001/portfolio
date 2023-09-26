@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add project</title>
+</head>
+<body>
+<form method="post" action="{% url 'polls:add_project' programmer_id %}">
+        {% csrf_token %}
+        <input type="text" name="name">
+        <input type="text" name="description">
+        <input type="submit" value="Add new project">
+    </form>
+</body>
+</html>

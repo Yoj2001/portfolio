@@ -1,0 +1,40 @@
+<script>
+    function validatePassword() {
+        const password = document.getElementById("password").value;
+        const length = password.length;
+        const symbols = /[!@#$%^&*()_={}\[\]:;<>,.?~\\-]/;
+
+        if (length < 8) {
+            alert("Password must be at least 8 characters long.");
+        } else if (!symbols.test(password)) {
+            alert("Password must contain at least one special symbol (!@#$%^&*()_={}\[\]:;<s>,.?~\\-).");
+        } else {
+            alert("Password is valid.");
+        }
+    }
+</script>
+<form action="{% url 'polls:user_save' %}" method="post">
+    {% csrf_token %}
+    <label for="username">Username:-</label>
+    <input type="text" id="username" name="username">
+    <label for="email">Email:----></label>
+    <input type="text" id="email" name="email"><br><br>
+    <label for="name">Name:----></label>
+    <input type="text" id="name" name="name">
+    <label for="lastname">Lastname:</label>
+    <input type="text" id="lastname" name="lastname"><br><br>
+    <label for="age">Age:------></label>
+    <input type="number" id="age" name="age"><br><br>
+    <label for="language">Language:-</label>
+    <input type="text" id="language" name="language">
+    <label for="framework">Framework:</label>
+    <input type="text" id="framework" name="framework">
+    <label for="experience">Experience year:</label>
+    <input type="number" id="experience" name="experience"><br><br>
+    <label for="password">-----------Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <label for="password2">Confirm Password:</label>
+    <input type="password" id="password2" name="password2"><br>
+    <input type="button" value="Check Password" onclick="validatePassword()">
+    <input type="submit" value="Submit">
+</form>
